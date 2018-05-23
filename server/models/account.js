@@ -27,6 +27,23 @@ const schema = Joi.object({
         id: Joi.string().required(),
         name: Joi.string().lowercase().required()
     })
+}).label('Account object').example({
+  _id: {asdf: 'asdf'},
+  name: {
+      first: 'John',
+      middle: 'Doe',
+      last: 'Smith'
+  },
+  notes: [ NoteEntry.schema._examples[0] ],
+  status: {
+      current: StatusEntry.schema._examples[0],
+      log: [StatusEntry.schema._examples[0]]
+  },
+  timeCreated: '2018-05-23T20:19:27Z',
+  user: {
+      id: 'asdfsadffds',
+      name: 'username?'
+  }
 });
 
 

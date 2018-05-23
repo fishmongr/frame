@@ -16,6 +16,8 @@ const register = function (server, serverOptions) {
         path: '/api/accounts',
         options: {
             tags: ['api','accounts'],
+            description: 'Get a paginated list of all accounts (need admin role)',
+            notes: 'This endpoint returns a paginated list of accounts that have been created. This is a much longer detailed description if we have answers to common questions, but I mainly have questions. Whats the difference between accounts and users? When would you want to list all accounts instead of all users? Assuming you need an admin role to use this endpoint? Where is that configured?',
             auth: {
                 scope: 'admin'
             },
@@ -25,6 +27,13 @@ const register = function (server, serverOptions) {
                     limit: Joi.number().integer().default(20).description('I\'m assuming this is how many results you want at a time per page? We should mention that just so it\'s clear. It should also have min/max Joi validation which also shows up in docs. I\'ve added an example.').min(1).max(1000),
                     page: Joi.number().integer().default(1).description('Looks like default is 1 so this is a 1 based index not a zero based index right? We should state stuff like that here.').min(1).max(1000)
                 }
+            },
+            response: {
+              schema: Joi.object({
+                results: Joi.array().items(
+                  Account.schema
+                ).label('Array of Account objects').required()
+              }).label('Accounts List Response Model').description('Returns a list of accounts.')
             }
         },
         handler: async function (request, h) {

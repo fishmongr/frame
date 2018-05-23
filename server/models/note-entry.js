@@ -11,7 +11,14 @@ const schema = Joi.object({
     }).required(),
     data: Joi.string().required(),
     timeCreated: Joi.date().default(NewDate(), 'time of creation')
-});
+}).label('Note Entry object').example({
+  adminCreated: {
+    id: 'asdfsdf',
+    name: 'asdfsfdsf'
+  },
+  data: 'asdfsfsdsf',
+  timeCreated: NewDate()
+})
 
 
 class NoteEntry extends MongoModels {}
