@@ -21,9 +21,9 @@ const register = function (server, serverOptions) {
             },
             validate: {
                 query: {
-                    sort: Joi.string().default('_id'),
-                    limit: Joi.number().default(20),
-                    page: Joi.number().default(1)
+                    sort: Joi.string().default('_id').description('This is a description for this query parameter. This is obviously a sort but what are the allowed values in the default setup? I\'ve added an example allow() validation which will show up as a pick list in interactive docs.').allow('_id', '_option2', '_option3'),
+                    limit: Joi.number().integer().default(20).description('I\'m assuming this is how many results you want at a time per page? We should mention that just so it\'s clear. It should also have min/max Joi validation which also shows up in docs. I\'ve added an example.').min(1).max(1000),
+                    page: Joi.number().integer().default(1).description('Looks like default is 1 so this is a 1 based index not a zero based index right? We should state stuff like that here.').min(1).max(1000)
                 }
             }
         },
