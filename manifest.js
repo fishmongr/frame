@@ -70,10 +70,46 @@ const manifest = {
                 options: {
                     info: {
                         title: 'Frame API Documentation',
-                        version: Package.version
+                        version: Package.version,
+                        description: `A brief recap of what is covered by these endpoints. What's the difference between /api/accounts and /api/users? What is /api/stasues for? What are the default role policies put into place? Like who can call /api/admins? Some of those things could be answered in the description of the actual endpoints but it would be great to have a short overview here for folks to quickly get up to speed and answer common questions.
+                         Here's a link to the **[Github Wiki](https://github.com/jedireza/frame/wiki)** for other common questions and how-tos.`
                     },
                     grouping: 'tags',
-                    sortTags: 'name'
+                    sortTags: 'name',
+                		tags: [{
+                			'name': 'accounts',
+                			'description': 'endpoints that deal with user account management?'
+                		},{
+                			'name': 'admin-groups',
+                			'description': 'endpoints for interacting with admin groups?'
+                		},{
+                      'name': 'admins',
+                      'description': 'endpoints that deal with individual admins?'
+                    },{
+                			'name': 'contact',
+                			'description': 'endpoints for user contact form?'
+                    },{
+                			'name': 'login',
+                			'description': 'endpoints for user login'
+                    },{
+                			'name': 'logout',
+                			'description': 'endpoints for user logout'
+                    },{
+                			'name': 'main',
+                			'description': 'endpoints for main? No idea.'
+                    },{
+                			'name': 'session',
+                			'description': 'endpoints around user sessions'
+                    },{
+                			'name': 'signup',
+                			'description': 'endpoints for user signup'
+                    },{
+                			'name': 'statuses',
+                			'description': 'endpoints for user statuses (what are user statuses?)'
+                    },{
+                			'name': 'users',
+                			'description': 'endpoints around user objects'
+                    }]
                 }
             },
             {
