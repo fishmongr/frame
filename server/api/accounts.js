@@ -23,9 +23,9 @@ const register = function (server, serverOptions) {
             },
             validate: {
                 query: {
-                  sort: Joi.string().default('_id'),
-                  limit: Joi.number().default(20),
-                  page: Joi.number().default(1)
+                    sort: Joi.string().default('_id'),
+                    limit: Joi.number().default(20),
+                    page: Joi.number().default(1)
                 }
             }
         },
