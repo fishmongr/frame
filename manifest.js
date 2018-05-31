@@ -87,10 +87,11 @@ This role contains a "name" (first, middle, last), "permissions", and "groups" p
 
 More details on [Users, Roles & Groups](https://github.com/jedireza/frame/wiki/Users,-Roles-&-Groups)   
 More details on [Admin & Admin Group Permissions](https://github.com/jedireza/frame/wiki/Admin-&-Admin-Group-Permissions)`
-                        },
-                        grouping: 'tags',
-                        sortTags: 'name',
-                        tags: [{
+                    },
+                    grouping: 'tags',
+                    sortTags: 'name',
+                    tags: [
+                        {
                             name: 'accounts',
                             description: 'endpoints to interact with customer role.'
                         },{
@@ -119,9 +120,10 @@ More details on [Admin & Admin Group Permissions](https://github.com/jedireza/fr
                         },{
                             name: 'users',
                             description: 'endpoints to interact with users (outside of roles)'
-                        }]
-                    }
-                },
+                        }
+                    ]
+                }
+            },
             {
                 plugin: 'hapi-mongo-models',
                 options: {
